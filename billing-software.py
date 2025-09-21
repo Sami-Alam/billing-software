@@ -33,7 +33,7 @@ class Bill_App:
         self.juice = IntVar()
         self.coke = IntVar()
         self.lassi = IntVar()
-        self.mountain_duo = IntVar()
+        self.mountain_Dew = IntVar()
     # ==============Total product price================
         self.medical_price = StringVar()
         self.grocery_price = StringVar()
@@ -168,10 +168,10 @@ class Bill_App:
         lassi_txt = Entry(F4, width=10, textvariable=self.lassi, font=('times new roman', 16, 'bold'), bd=5, relief=GROOVE)
         lassi_txt.grid(row=4, column=1, padx=10, pady=10)
 
-        mountain_duo_lbl = Label(F4, text="Mountain Duo", font=('times new roman', 16, 'bold'), bg="#6debeb", fg="black")
-        mountain_duo_lbl.grid(row=5, column=0, padx=10, pady=10, sticky='W')
-        mountain_duo_txt = Entry(F4, width=10, textvariable=self.mountain_duo, font=('times new roman', 16, 'bold'), bd=5, relief=GROOVE)
-        mountain_duo_txt.grid(row=5, column=1, padx=10, pady=10)
+        mountain_Dew_lbl = Label(F4, text="Mountain Dew", font=('times new roman', 16, 'bold'), bg="#6debeb", fg="black")
+        mountain_Dew_lbl.grid(row=5, column=0, padx=10, pady=10, sticky='W')
+        mountain_Dew_txt = Entry(F4, width=10, textvariable=self.mountain_Dew, font=('times new roman', 16, 'bold'), bd=5, relief=GROOVE)
+        mountain_Dew_txt.grid(row=5, column=1, padx=10, pady=10)
 
     # =================BillArea======================
         F5 = Frame(self.root, bd=10, relief=GROOVE)
@@ -267,7 +267,7 @@ class Bill_App:
         self.c_d_j_p = self.juice.get()*10
         self.c_d_c_p = self.coke.get()*10
         self.c_d_l_p = self.lassi.get()*10
-        self.c_m_d = self.mountain_duo.get()*10
+        self.c_m_d = self.mountain_Dew.get()*10
         self.total_cold_drinks_price = float(self.c_d_s_p+self.c_d_w_p+self.c_d_j_p+self.c_d_c_p+self.c_d_l_p+self.c_m_d)
 
         self.cold_drinks_price.set("Tk. "+str(self.total_cold_drinks_price))
@@ -329,8 +329,8 @@ class Bill_App:
             self.txtarea.insert(END, f"\n Coke\t\t{self.coke.get()}\t\t{self.c_d_c_p}")
         if self.lassi.get() != 0:
             self.txtarea.insert(END, f"\n Lassi\t\t{self.cream.get()}\t\t{self.c_d_l_p}")
-        if self.mountain_duo.get() != 0:
-            self.txtarea.insert(END, f"\n Mountain Duo\t\t{self.sanitizer.get()}\t\t{self.c_m_d}")
+        if self.mountain_Dew.get() != 0:
+            self.txtarea.insert(END, f"\n Mountain Dew\t\t{self.sanitizer.get()}\t\t{self.c_m_d}")
             self.txtarea.insert(END, f"\n--------------------------------")
     # ===============taxes==============================
         if self.medical_tax.get() != '0.0':
@@ -390,7 +390,7 @@ class Bill_App:
             self.juice.set(0)
             self.coke.set(0)
             self.lassi.set(0)
-            self.mountain_duo.set(0)
+            self.mountain_Dew.set(0)
     # ====================taxes================================
             self.medical_price.set("")
             self.grocery_price.set("")
