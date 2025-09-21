@@ -246,9 +246,9 @@ class Bill_App:
         self.m_t_g_p = self.thermal_gun.get()*15
         self.total_medical_price = float(self.m_m_p+self.m_h_g_p+self.m_s_p+self.m_c_p+self.m_t_g_p+self.m_s_p)
 
-        self.medical_price.set("Rs. "+str(self.total_medical_price))
+        self.medical_price.set("Tk. "+str(self.total_medical_price))
         self.c_tax = round((self.total_medical_price*0.05), 2)
-        self.medical_tax.set("Rs. "+str(self.c_tax))
+        self.medical_tax.set("Tk. "+str(self.c_tax))
 
         self.g_r_p = self.rice.get()*10
         self.g_f_o_p = self.food_oil.get()*10
@@ -258,9 +258,9 @@ class Bill_App:
         self.g_m_p = self.maggi.get()*5
         self.total_grocery_price = float(self.g_r_p+self.g_f_o_p+self.g_w_p+self.g_s_p+self.g_f_p+self.g_m_p)
 
-        self.grocery_price.set("Rs. " + str(self.total_grocery_price))
+        self.grocery_price.set("Tk. " + str(self.total_grocery_price))
         self.g_tax = round((self.total_grocery_price*5), 2)
-        self.grocery_tax.set("Rs. " + str(self.g_tax))
+        self.grocery_tax.set("Tk. " + str(self.g_tax))
 
         self.c_d_s_p = self.sprite.get()*10
         self.c_d_w_p = self.mineral.get()*10
@@ -270,9 +270,9 @@ class Bill_App:
         self.c_m_d = self.mountain_duo.get()*10
         self.total_cold_drinks_price = float(self.c_d_s_p+self.c_d_w_p+self.c_d_j_p+self.c_d_c_p+self.c_d_l_p+self.c_m_d)
 
-        self.cold_drinks_price.set("Rs. "+str(self.total_cold_drinks_price))
+        self.cold_drinks_price.set("Tk. "+str(self.total_cold_drinks_price))
         self.c_d_tax = round((self.total_cold_drinks_price * 0.1), 2)
-        self.cold_drinks_tax.set("Rs. "+str(self.c_d_tax))
+        self.cold_drinks_tax.set("Tk. "+str(self.c_d_tax))
 
         self.total_bill = float(self.total_medical_price+self.total_grocery_price+self.total_cold_drinks_price+self.c_tax+self.g_tax+self.c_d_tax)
 
@@ -288,7 +288,7 @@ class Bill_App:
     def bill_area(self):
         if self.c_name.get() == " " or self.c_phone.get() == " ":
             messagebox.showerror("Error", "Customer Details Are Must")
-        elif self.medical_price.get() == "Rs. 0.0" and self.grocery_price.get() == "Rs. 0.0" and self.cold_drinks_price.get()=="Rs. 0.0":
+        elif self.medical_price.get() == "Tk. 0.0" and self.grocery_price.get() == "Tk. 0.0" and self.cold_drinks_price.get()=="Tk. 0.0":
             messagebox.showerror("Error", "No Product Purchased")
         else:
             self.welcome_bill()
@@ -340,7 +340,7 @@ class Bill_App:
         if self.cold_drinks_tax.get() != '0.0':
             self.txtarea.insert(END, f"\n Cold Drinks Tax\t\t\t{self.cold_drinks_tax.get()}")
 
-        self.txtarea.insert(END, f"\n Total Bil:\t\t\t Rs.{self.total_bill}")
+        self.txtarea.insert(END, f"\n Total Bil:\t\t\t Tk.{self.total_bill}")
         self.txtarea.insert(END, f"\n--------------------------------")
         self.save_bill()
 
